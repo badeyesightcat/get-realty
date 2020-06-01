@@ -13,7 +13,7 @@
 - 이 웹앱은 2020년 2월 한 달 동안의 전국 아파트 매물의 실거래가 내역을 보여줍니다.
 - React JS 를 사용하여 개발하였습니다.
 - 실거래가 내역은 [데이터 1번가](https://www.data.go.kr/tcs/dos/selectDataOneStListView.do) 에서 제공하는 거래내역을 csv로 내려받아 활용하였습니다.
-- csv 파일의 내용을 API로 제공하는 서버는 [Renee Beom](https://github.com/sean-poem)이 작업한 [](https://github.com/sean-poem/realestateprj1)을 활용하였습니다.
+- csv 파일의 내용을 API로 제공하는 서버는 [Renee Beom](https://github.com/sean-poem)이 작업한 [테스트 API](https://github.com/sean-poem/realestateprj1)을 활용하였습니다.
 - 지도는 [카카오 지도 API](https://apis.map.kakao.com/web/)를 사용하였습니다.
 
 
