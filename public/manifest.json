@@ -1,0 +1,8 @@
+{
+  "short_name": "아파트 실거래내역 검색",
+  "name": "주택매매거래 정보조회",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
