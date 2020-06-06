@@ -61,7 +61,6 @@ button {
   padding-bottom: 3rem;
   overflow: hidden;
   background-color: var(--clr-accent);
-  cursor: pointer;
   text-shadow: 1px 1px var(--clr-accent-dark), 2px 2px var(--clr-accent-dark),
     3px 3px var(--clr-accent-dark), 4px 4px var(--clr-accent-dark),
     5px 5px var(--clr-accent-dark), 6px 6px var(--clr-accent-dark),
