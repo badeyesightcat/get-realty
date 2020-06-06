@@ -1,5 +1,4 @@
-import React, { useContext } from "react";
-import resetAddress from "../events/resetAddress";
+import React, { useContext, useEffect, useCallback } from "react";
 import { AddressContext } from "../context/addressContext";
 
 const AddressResult = () => {
@@ -8,7 +7,14 @@ const AddressResult = () => {
     countyString,
     complexString,
     resultState,
+    chosenAddress,
+    setChosenAddress
   } = useContext(AddressContext);
+
+  const resetAddress = () => {
+    window.location = "/";
+    console.log(chosenAddress)
+  };
 
   return (
     <div className={resultState}>
@@ -21,7 +27,7 @@ const AddressResult = () => {
       <button
         type="button"
         className="btn--search-new-one"
-        onClick={() => resetAddress()}
+        onClick={resetAddress}
       >
         새주소검색
       </button>
