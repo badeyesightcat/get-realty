@@ -1,6 +1,5 @@
 import React, { useContext, useState, useEffect } from "react";
 import { AddressContext } from "../context/addressContext";
-import resetAddress from "../events/resetAddress";
 
 function Header() {
   const { chosenAddress, province } = useContext(AddressContext);
@@ -14,7 +13,7 @@ function Header() {
   }, [province, inputProvince]);
 
   return (
-    <h1 onClick={() => resetAddress()} className={logo}>
+    <h1 className={logo}>
       주택실거래가변동
     </h1>
   );
