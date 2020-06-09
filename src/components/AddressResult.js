@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useCallback } from "react";
+import React, { useContext } from "react";
 import { AddressContext } from "../context/addressContext";
 
 const AddressResult = () => {
@@ -6,14 +6,11 @@ const AddressResult = () => {
     provinceString,
     countyString,
     complexString,
-    resultState,
-    chosenAddress,
-    setChosenAddress
+    resultState
   } = useContext(AddressContext);
 
   const resetAddress = () => {
     window.location = "/";
-    console.log(chosenAddress)
   };
 
   return (
