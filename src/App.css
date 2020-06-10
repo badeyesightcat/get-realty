@@ -7,12 +7,15 @@
 }
 
 :root {
-  --clr-accent: #7e700a;
-  --clr-accent-dark: #72660d;
-  --clr-dark: #2e3d34;
-  --clr-medium: #726d60;
-  --clr-medium-light: #d2c0a8;
-  --clr-light: #fcf9ea;
+  --clr-accent: #334573;
+  --clr-accent-dark: #2e3644;
+  --clr-dark: #2e3644;
+  --clr-accent-light: #4a61e2;
+  --clr-accent-yellow: #f7df59;
+  --clr-accent-green: #3f5611;
+  --clr-medium: #d19d7c;
+  --clr-medium-light: #d19d7c;
+  --clr-light: #fdfcfc;
   --fw-bold: 700;
   --fw-normal: 400;
 }
@@ -382,26 +385,24 @@ button {
 
 .table-th,
 .table-td {
-  padding: 1rem 0;
+  padding: 1rem 0 0.95rem;
   text-align: center;
 }
 
 .table-th {
   position: relative;
-  border-bottom: 0.25rem solid var(--clr-accent);
-  background-color: rgb(121, 117, 108);
+  border-bottom: 0.25rem solid var(--clr-medium);
+  background-color: var(--clr-accent);
   font-weight: var(--fw-normal);
   color: var(--clr-light);
-  text-shadow: 0 0.2rem 0.2rem rgba(0, 0, 0, 0.35),
-    0 0.5rem 0.5rem rgba(0, 0, 0, 0.1);
 }
 .table-th:not(:first-of-type)::after {
   content: "";
-  width: 0.125rem;
-  height: 0.75rem;
-  bottom: 0;
+  width: 0.1rem;
+  height: 1rem;
+  bottom: -0.25rem;
   left: 0;
-  background-color: var(--clr-accent);
+  background-color: var(--clr-medium);
   position: absolute;
 }
 
@@ -413,6 +414,53 @@ button {
   max-width: 90%;
   margin: 2rem auto 5rem;
   min-height: 80vh;
+}
+
+.realty-area-size {
+  max-width: 90%;
+  margin: 2rem auto 0;
+  /* display: flex;
+  justify-content: space-between; */
+}
+
+.realty-area-size-title {
+  position: relative;
+  margin-bottom: 1rem;
+  padding-left: 0.65rem;
+  font-weight: var(--fw-normal);
+  color: var(--clr-dark);
+}
+
+.realty-area-size-title::before {
+  position: absolute;
+  content: "";
+  width: 0.2rem;
+  height: 60%;
+  top: 0;
+  left: 0;
+  background-color: var(--clr-dark);
+}
+
+.btn--area-size {
+  margin-right: 1rem;
+  padding: 0.5rem 0.75rem;
+  border: 0;
+  background-color: var(--clr-light);
+  font-size: 1rem;
+}
+
+.btn--area-size.active,
+.btn--area-size:focus {
+  position: relative;
+  background-color: var(--clr-accent);
+  outline-color: var(--clr-accent);
+  color: var(--clr-light);
+}
+
+.btn--area-size.active::after,
+.btn--area-size:focus::after {
+  position: absolute;
+  content: "";
 }
 
 @media screen and (max-width: 800px) {
