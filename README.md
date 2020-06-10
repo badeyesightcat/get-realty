@@ -3,9 +3,11 @@
 ![시도 정보 노출되는 첫 화면](docs/images/step01.png)
 ![시도 정보 중 선택](docs/images/step02.png)
 ![구군 정보 노출 및 선택](docs/images/step03.png)
-![구군 내 포함된 아파트단지의 초성 정보 노출](docs/images/step04.png)
-![선택한 초성으로 시작하는 아파트 단지 중 선택](docs/images/step05.png)
-![거래내역 보기 버튼 클릭 후 지도와 함께 노출된 거래내역 테이블](docs/images/step06.png)
+
+<!-- ![구군 내 포함된 아파트단지의 초성 정보 노출](docs/images/step04.png) -->
+
+![선택한 초성으로 시작하는 아파트 단지 중 선택](docs/images/step04.png)
+![거래내역 보기 버튼 클릭 후 지도와 함께 노출된 거래내역 테이블](docs/images/step05.png)
 
 ## Introduction
 
