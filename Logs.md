@@ -1,5 +1,11 @@
 # Work logs
 
+**2020.06.10**
+
+- Modify the color theme in order to attract more users
+
+<br>
+
 **2020.06.09**
 
 - Started to test giving chart ui via the [Recharts](http://recharts.org/en-US/guide/getting-started)
