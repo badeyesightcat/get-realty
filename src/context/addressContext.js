@@ -11,6 +11,9 @@ const AddressContextProvier = (props) => {
   let [county, setCounty] = useState([]);
   let [complex, setComplex] = useState({});
   let [deals, setDeals] = useState([]);
+  let [areasArray, setAreasArray] = useState(null);
+  let [thatArea, setThatArea] = useState(null);
+  let [dealsOfThatArea, setDealsOfThatArea] = useState(null);
 
   // state: 사용자가 선택한 주소 객체
   let [chosenAddress, setChosenAddress] = useState({
@@ -44,36 +47,35 @@ const AddressContextProvier = (props) => {
             [name]: value,
             inputCounty: null,
             inputComplex: null,
-            inputWholeAddress: ""
-          }
+            inputWholeAddress: "",
+          };
         case "inputCounty":
           return {
             ...prevState,
             [name]: value,
             inputComplex: null,
             inputWholeAddress: "",
-          }
+          };
         case "inputComplex":
           return {
             ...prevState,
             [name]: value,
-            inputWholeAddress: ""
-          }
+            inputWholeAddress: "",
+          };
         case "inputWholeAddress":
           return {
             ...prevState,
-            [name]: value
-          }
+            [name]: value,
+          };
         default:
           return {
             inputProvince: null,
             inputCounty: null,
             inputComplex: null,
             inputWholeAddress: "",
-          }
+          };
       }
-    }
-    );
+    });
   };
 
   // 사용자가 선택한 초성으로 시작하는 아파트 단지 목록
@@ -81,7 +83,7 @@ const AddressContextProvier = (props) => {
     let { value } = e.target;
     setChosenAddress((prev) => ({
       ...prev,
-      inputComplex: null
+      inputComplex: null,
     }));
     setSelectedGroupKey(value);
   };
@@ -223,6 +225,26 @@ const AddressContextProvier = (props) => {
     if (chosenAddress.inputProvince) setResultState("address-result");
   }, [chosenAddress.inputProvince]);
 
+  // state: 해당 아파트가 보유한 면적 배열
+  useEffect(() => {
+    const temp = deals.reduce((accu, curr) => {
+      const area = parseFloat(curr.AreaExclusive);
+      if (accu.indexOf(area) === -1) accu.push(area);
+      return accu.sort((a, b) => a - b);
+    }, []);
+
+    setAreasArray(temp);
+  }, [deals]);
+
+  // state: 면적별 거래건 정렬
+  useEffect(() => {
+    const temp = deals.filter(
+      (deal) => parseFloat(deal.AreaExclusive) === thatArea
+    );
+
+    setDealsOfThatArea(temp);
+  }, [deals, thatArea]);
+
   return (
     <AddressContext.Provider
       value={{
@@ -248,6 +270,10 @@ const AddressContextProvier = (props) => {
         deals,
         resultState,
         setResultState,
+        areasArray,
+        thatArea,
+        setThatArea,
+        dealsOfThatArea,
       }}
     >
       {props.children}
