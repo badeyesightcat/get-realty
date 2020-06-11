@@ -2,37 +2,39 @@ import React, { useContext } from "react";
 import { AddressContext } from "../context/addressContext";
 
 const DealsTable = () => {
-  const { deals } = useContext(AddressContext);
+  const { dealsOfThatArea } = useContext(AddressContext);
 
   return (
     <div className="realty__data-area">
       <table className="realty-data-table">
-        <thead>
-          <tr>
-            <th className="table-th" scope="col">
-              번호
-            </th>
-            <th className="table-th" scope="col">
-              공급면적 (제곱미터)
-            </th>
-            <th className="table-th" scope="col">
-              층수 (층)
-            </th>
-            <th className="table-th" scope="col">
-              거래가격 (만원)
-            </th>
-            <th className="table-th" scope="col">
-              날짜
-            </th>
-            <th className="table-th" scope="col">
-              준공연도
-            </th>
-          </tr>
-        </thead>
+        {dealsOfThatArea.length !== 0 && (
+          <thead>
+            <tr>
+              <th className="table-th" scope="col">
+                번호
+              </th>
+              <th className="table-th" scope="col">
+                공급면적 (제곱미터)
+              </th>
+              <th className="table-th" scope="col">
+                층수 (층)
+              </th>
+              <th className="table-th" scope="col">
+                거래가격 (만원)
+              </th>
+              <th className="table-th" scope="col">
+                날짜
+              </th>
+              <th className="table-th" scope="col">
+                준공연도
+              </th>
+            </tr>
+          </thead>
+        )}
         <tbody>
-          {!deals
+          {!dealsOfThatArea
             ? "거래내역이 없습니다."
-            : deals.map((item, idx) => (
+            : dealsOfThatArea.map((item, idx) => (
                 <tr key={item.Idx}>
                   <td className="table-td">{idx + 1}</td>
                   <td className="table-td">{item.AreaExclusive}</td>
